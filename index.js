@@ -65,8 +65,8 @@ async function processImages() {
         .resize({ width: width, withoutEnlargement: true });
 
       for (const format of config.formats) {
-        // Skonstruuj nową nazwę pliku: np. moje_zdjecie-medium.webp
-        const outFileName = `${fileName}-${sizeName}.${format}`;
+        // Skonstruuj nową nazwę pliku: taka sama jak oryginał, zmienione rozszerzenie
+        const outFileName = `${fileName}.${format}`;
         const outFilePath = path.join(sizeDir, outFileName);
 
         const formatOpts = config.formatOptions[format] || {};
